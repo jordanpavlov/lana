@@ -23,8 +23,10 @@ func listen() string {
 		return ""
 	}
 	s := strings.ToLower(r.Alternative[0].Transcript)
-	say("ok")
-	fmt.Println(s)
+	if s != "" {
+		say("ok")
+		fmt.Println(s)
+	}
 	return s
 }
 
