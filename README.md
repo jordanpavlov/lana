@@ -23,3 +23,12 @@ The dependency should decrease over time.
 
 Please check out the `commander` directory.
 
+Supported command:
+
+* google ...
+* say ...
+* gmail
+* time
+* news
+* what is your name?
+
