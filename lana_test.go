@@ -3,7 +3,12 @@ package lana
 import "testing"
 
 func TestListen(t *testing.T) {
-	t.Log(Listen("zh_TW"))
+	r, err := Listen("en")
+	if err != nil {
+		t.Log(err)
+	} else {
+		t.Log(r)
+	}
 }
 
 func TestSay(t *testing.T) {

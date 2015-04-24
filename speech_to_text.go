@@ -44,7 +44,6 @@ func Listen(lang string) (result *Result, err error) {
 		return
 	}
 	defer resp.Body.Close()
-	Say("ok.", "en")
 
 	// parse response
 	s := bufio.NewScanner(resp.Body)

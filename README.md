@@ -19,3 +19,7 @@ The dependency should decrease over time.
 * arecord (alsa-utils)
 * mpg123
 
+# Demo
+
+Please check out the `commander` directory.
+
