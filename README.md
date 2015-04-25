@@ -4,7 +4,7 @@ A text-to-speech and speech-to-text library for go.
 
 This library is written by taylorchu, and released under GPL2. 
 
-It is currently in alpha stage.
+It is currently in alpha stage. In the future we will migrate to real go implementation, and google api is used as a stub here.
 
 # Supported platform
 
