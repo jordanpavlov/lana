@@ -31,7 +31,9 @@ func listen() string {
 }
 
 func main() {
-	say("What can I do for you?")
+    for {
+	//say("What can I do for you?")
+	fmt.Println("What can I do for you?")    
 	cmd := listen()
 	switch {
 	case regexp.MustCompile("^google ").MatchString(cmd):
@@ -60,7 +62,33 @@ func main() {
 				break
 			}
 		}
+        case regexp.MustCompile("evolution").MatchString(cmd):
+		say("Openning evolution")
+		exec.Command("evolution").Start()
+	case regexp.MustCompile("thunderbird").MatchString(cmd):
+		say("Openning thunderbird")
+		exec.Command("thunderbird").Start()
+	case regexp.MustCompile("g edit").MatchString(cmd): // does not like "G edit"
+		say("Openning g edit")
+		exec.Command("gedit").Start()
+	case regexp.MustCompile("who are you").MatchString(cmd):
+		say("I am Lana, nice to meet you!")
+	case regexp.MustCompile("chrome").MatchString(cmd):
+		say("Openning Chrome")
+		exec.Command("google-chrome-stable").Start()
+	// Desktop Controll:
+	case regexp.MustCompile("quit").MatchString(cmd): // use xdotool, "close" hard to say
+		say("Closing")
+		exec.Command("xdotool", "key", "Alt_L+F4").Start()
+	case regexp.MustCompile("start").MatchString(cmd): // use xdotool
+		say("Start")
+		exec.Command("xdotool", "key", "Alt_L+F1").Start()
+	case regexp.MustCompile("exit").MatchString(cmd):
+		say("Leaving")
+		return                  // Holy shit GO :)  or break Loop with definend loopname
 	default:
-		say("Please try again.")
+		//say("Please try again.")
+		fmt.Println("Please try again.")
 	}
+    }
 }
